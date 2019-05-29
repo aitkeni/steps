@@ -1,0 +1,356 @@
+{
+    "activities": [
+        {
+            "activityType": "Aerobics",
+            "activityTypeDisplayText": "Aerobics",
+            "stepsMultipler": 209.0
+        },
+        {
+            "activityType": "Archery",
+            "activityTypeDisplayText": "Archery",
+            "stepsMultipler": 123.0
+        },
+        {
+            "activityType": "Badminton",
+            "activityTypeDisplayText": "Badminton",
+            "stepsMultipler": 157.0
+        },
+        {
+            "activityType": "Baseball",
+            "activityTypeDisplayText": "Baseball",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "Basketball",
+            "activityTypeDisplayText": "Basketball",
+            "stepsMultipler": 186.0
+        },
+        {
+            "activityType": "BeachVolleyball",
+            "activityTypeDisplayText": "Beach Volleyball",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "BoxingPunchingBag",
+            "activityTypeDisplayText": "Boxing - punching bag",
+            "stepsMultipler": 157.0
+        },
+        {
+            "activityType": "BoxingSparring",
+            "activityTypeDisplayText": "Boxing - sparring",
+            "stepsMultipler": 223.0
+        },
+        {
+            "activityType": "Canoeing",
+            "activityTypeDisplayText": "Canoeing",
+            "stepsMultipler": 166.0
+        },
+        {
+            "activityType": "CircuitTraining",
+            "activityTypeDisplayText": "Circuit Training",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "BikeCompetitive",
+            "activityTypeDisplayText": "Cycling - competitive",
+            "stepsMultipler": 343.0
+        },
+        {
+            "activityType": "BikeLeisure",
+            "activityTypeDisplayText": "Cycling - leisure",
+            "stepsMultipler": 100.0
+        },
+        {
+            "activityType": "BikeModerate",
+            "activityTypeDisplayText": "Cycling - moderate",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "ActiveWorkstationDeskBike",
+            "activityTypeDisplayText": "Desk bike",
+            "stepsMultipler": 66.0
+        },
+        {
+            "activityType": "ActiveWorkstationTreadmill",
+            "activityTypeDisplayText": "Desk treadmill",
+            "stepsMultipler": 66.0
+        },
+        {
+            "activityType": "Diving",
+            "activityTypeDisplayText": "Diving",
+            "stepsMultipler": 86.0
+        },
+        {
+            "activityType": "EllipticalTrainer",
+            "activityTypeDisplayText": "Elliptical Trainer",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "FieldHockey",
+            "activityTypeDisplayText": "Field Hockey",
+            "stepsMultipler": 223.0
+        },
+        {
+            "activityType": "Gymnastics",
+            "activityTypeDisplayText": "Gymnastics",
+            "stepsMultipler": 109.0
+        },
+        {
+            "activityType": "HeavyResistanceTraining",
+            "activityTypeDisplayText": "Heavy Resistance Training ",
+            "stepsMultipler": 171.0
+        },
+        {
+            "activityType": "HIIT",
+            "activityTypeDisplayText": "HIIT - High Intensity Interval Training",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "IceHockey",
+            "activityTypeDisplayText": "Ice Hockey",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "IceSkating",
+            "activityTypeDisplayText": "Ice Skating",
+            "stepsMultipler": 200.0
+        },
+        {
+            "activityType": "Judo",
+            "activityTypeDisplayText": "Judo",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Karate",
+            "activityTypeDisplayText": "Karate",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Kayaking",
+            "activityTypeDisplayText": "Kayaking",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "Kickboxing",
+            "activityTypeDisplayText": "Kickboxing",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Kitesurfing",
+            "activityTypeDisplayText": "Kitesurfing",
+            "stepsMultipler": 314.0
+        },
+        {
+            "activityType": "Lacrosse",
+            "activityTypeDisplayText": "Lacrosse",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "LawnBowling",
+            "activityTypeDisplayText": "Lawn Bowling",
+            "stepsMultipler": 94.0
+        },
+        {
+            "activityType": "LightResistanceTraining",
+            "activityTypeDisplayText": "Light Resistance Training ",
+            "stepsMultipler": 100.0
+        },
+        {
+            "activityType": "Netball",
+            "activityTypeDisplayText": "Netball",
+            "stepsMultipler": 186.0
+        },
+        {
+            "activityType": "Pilates",
+            "activityTypeDisplayText": "Pilates",
+            "stepsMultipler": 86.0
+        },
+        {
+            "activityType": "Polo",
+            "activityTypeDisplayText": "Polo",
+            "stepsMultipler": 229.0
+        },
+        {
+            "activityType": "RockClimbing",
+            "activityTypeDisplayText": "Rock Climbing",
+            "stepsMultipler": 166.0
+        },
+        {
+            "activityType": "RollerBlading",
+            "activityTypeDisplayText": "Roller Blading",
+            "stepsMultipler": 214.0
+        },
+        {
+            "activityType": "RollerSkating",
+            "activityTypeDisplayText": "Roller Skating",
+            "stepsMultipler": 200.0
+        },
+        {
+            "activityType": "Rowing",
+            "activityTypeDisplayText": "Rowing",
+            "stepsMultipler": 166.0
+        },
+        {
+            "activityType": "RowingMachine",
+            "activityTypeDisplayText": "Rowing Machine",
+            "stepsMultipler": 137.0
+        },
+        {
+            "activityType": "RugbyUnion",
+            "activityTypeDisplayText": "Rugby Union",
+            "stepsMultipler": 180.0
+        },
+        {
+            "activityType": "Sailing",
+            "activityTypeDisplayText": "Sailing",
+            "stepsMultipler": 86.0
+        },
+        {
+            "activityType": "SCUBAdiving",
+            "activityTypeDisplayText": "Scuba Diving",
+            "stepsMultipler": 200.0
+        },
+        {
+            "activityType": "Skateboarding",
+            "activityTypeDisplayText": "Skateboarding",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "CrossCountrySkiing",
+            "activityTypeDisplayText": "Skiing - cross-country",
+            "stepsMultipler": 257.0
+        },
+        {
+            "activityType": "DownhillSkiing",
+            "activityTypeDisplayText": "Skiing - downhill",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Snorkelling",
+            "activityTypeDisplayText": "Snorkelling",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "Snowboarding",
+            "activityTypeDisplayText": "Snowboarding",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Soccer",
+            "activityTypeDisplayText": "Soccer",
+            "stepsMultipler": 200.0
+        },
+        {
+            "activityType": "Softball",
+            "activityTypeDisplayText": "Softball",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "SpinClass",
+            "activityTypeDisplayText": "Spin Class",
+            "stepsMultipler": 243.0
+        },
+        {
+            "activityType": "Squash",
+            "activityTypeDisplayText": "Squash",
+            "stepsMultipler": 209.0
+        },
+        {
+            "activityType": "StandingDesk",
+            "activityTypeDisplayText": "Standing desk",
+            "stepsMultipler": 10.0
+        },
+        {
+            "activityType": "StationaryBikeHigh",
+            "activityTypeDisplayText": "Stationary Bike - high effort",
+            "stepsMultipler": 251.0
+        },
+        {
+            "activityType": "StationaryBikeLow",
+            "activityTypeDisplayText": "Stationary Bike - low effort",
+            "stepsMultipler": 100.0
+        },
+        {
+            "activityType": "StationaryBikeModerate",
+            "activityTypeDisplayText": "Stationary Bike - moderate effort",
+            "stepsMultipler": 137.0
+        },
+        {
+            "activityType": "Surfing",
+            "activityTypeDisplayText": "Surfing",
+            "stepsMultipler": 86.0
+        },
+        {
+            "activityType": "SwimCompetitive",
+            "activityTypeDisplayText": "Swim - competitive",
+            "stepsMultipler": 286.0
+        },
+        {
+            "activityType": "SwimLeisure",
+            "activityTypeDisplayText": "Swim - leisure",
+            "stepsMultipler": 171.0
+        },
+        {
+            "activityType": "SwimModerate",
+            "activityTypeDisplayText": "Swim - moderate",
+            "stepsMultipler": 237.0
+        },
+        {
+            "activityType": "TableTennis",
+            "activityTypeDisplayText": "Table Tennis",
+            "stepsMultipler": 114.0
+        },
+        {
+            "activityType": "TaeKwanDo",
+            "activityTypeDisplayText": "Taekwondo",
+            "stepsMultipler": 151.0
+        },
+        {
+            "activityType": "Tennis",
+            "activityTypeDisplayText": "Tennis",
+            "stepsMultipler": 209.0
+        },
+        {
+            "activityType": "Volleyball",
+            "activityTypeDisplayText": "Volleyball",
+            "stepsMultipler": 114.0
+        },
+        {
+            "activityType": "Wakeboarding",
+            "activityTypeDisplayText": "Wakeboarding",
+            "stepsMultipler": 171.0
+        },
+        {
+            "activityType": "WaterAerobics",
+            "activityTypeDisplayText": "Water Aerobics",
+            "stepsMultipler": 157.0
+        },
+        {
+            "activityType": "WaterPolo",
+            "activityTypeDisplayText": "Water Polo",
+            "stepsMultipler": 286.0
+        },
+        {
+            "activityType": "WaterSkiing",
+            "activityTypeDisplayText": "Water Skiing",
+            "stepsMultipler": 171.0
+        },
+        {
+            "activityType": "Windsurfing",
+            "activityTypeDisplayText": "Windsurfing",
+            "stepsMultipler": 143.0
+        },
+        {
+            "activityType": "Wrestling",
+            "activityTypeDisplayText": "Wrestling ",
+            "stepsMultipler": 171.0
+        },
+        {
+            "activityType": "Yoga",
+            "activityTypeDisplayText": "Yoga",
+            "stepsMultipler": 71.0
+        }
+    ],
+    "maxActivitiesPerDay": 10,
+    "success": true
+}
