@@ -6,12 +6,12 @@
 
 <h2>York Step Counter</h2>
 
-<form method="POST" action="Confirmation">
+<form method="POST" action="confirm">
     <table border="0.1" style="width:50%">
         <tr><td>Name:</td><td><input type="string" name="Name"></td></tr>
+        <tr><td> Date: </td><td><input type="date" name="Date"> (Defaults to yesterday)</td></tr>
         <tr><td>Activity: </td><td><select name="Activity">##ActivityMarker##</select></td></tr>
-        <tr><td> Date: </td><td><input type="date" name="Date"></td></tr>
-        <tr><td>Minutes: </td><td><input type="string" name="Minutes"></td></tr>
+        <tr><td>Minutes of Activity: </td><td><input type="string" name="Minutes"></td></tr>
         <tr><td>Steps: </td><td><input type="string" name="Steps"></td></tr>
     </table>
 

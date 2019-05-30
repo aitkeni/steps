@@ -18,10 +18,10 @@ class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             Temp = "./logon.html"
-        else:
-        #FilePlace = "." + str(self.path)
-            Temp = "./" + self.path        
-        #print(self.path)
+        elif self.path == "/home.html":
+            Temp = "." + self.path        
+        else: 
+            return
         
         exists = os.path.exists(Temp)
         if exists:
@@ -71,7 +71,28 @@ class MyServer(BaseHTTPRequestHandler):
                 self.send_header("Content-type", "text/html")
                 self.end_headers()     
                 self.wfile.write(bytes("Failed Authentication. Goodbye".encode("utf-8")))
-        
+
+        if self.path=="/confirm":
+            content_length = int(self.headers['Content-Length'])            
+            post_data = self.rfile.read(content_length)          
+            
+            DPost_Data = (str(post_data.decode("utf-8")))
+            DPost_Data = DPost_Data.split("&")
+ 
+
+            Temp = "./confirm.html"          
+            exists = os.path.exists(Temp)
+            if exists:
+                handle = open(Temp, "r")
+                read_data = handle.read()
+
+                read_data = addData(read_data, DPost_Data)
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()     
+                self.wfile.write(bytes(read_data.encode("utf-8")))
+                handle.close
+
         if self.path=="/Confirmation":
             
             content_length = int(self.headers['Content-Length'])            
@@ -93,11 +114,11 @@ class MyServer(BaseHTTPRequestHandler):
  
             read_data = "<html><head></head><body><h2>York Step Counter</h2>" + \
             "<table border=\"0.1\" style=\"width:50%\">" + \
-            "<tr><th>Name</th><th>Activity</th><th>Minutes</th><th>Date</th><th>Steps</th></tr>" + \
+            "<tr><th>Name,Activity,Minutes,Date,Steps</th></tr>" + \
             "<tr><td>" + DPostFinal + "</td><td></td></tr>" + \
             "</table>" + \
             "<form method=\"POST\" action=\"AddSteps\">" + \
-            "<input type=\"submit\" value=\"Confirm\">" + \
+            "<a href=\"home.html\"> Cancel </a><input type=\"submit\" value=\"Confirm\">" + \
             "</form></body></html>"
 
             self.send_response(200)
@@ -129,11 +150,18 @@ class MyServer(BaseHTTPRequestHandler):
                 f.writelines(DPostFinal)
                 f.close
             
-            self.send_response(200)
-            self.send_header("Content-type", "text/html")
-            self.end_headers()
-            self.wfile.write(bytes("Your achievment has been recorded".encode("utf-8")))
-        
+            Temp = "./success.html"          
+            exists = os.path.exists(Temp)
+            if exists:
+                handle = open(Temp, "r")
+                read_data = handle.read()
+
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()     
+                self.wfile.write(bytes(read_data.encode("utf-8")))
+                handle.close
+            
         return
 
 
@@ -155,6 +183,18 @@ def addActivities(read_data):
         html_parts.insert(len(html_parts)-1,"<option value=\"" + activity["activityType"] + "\">" + activity["activityTypeDisplayText"] + "</option>\n")
 
     return '\n'.join(html_parts)
+
+def addData(read_data,DPost_Data):
+    
+    for DPost in DPost_Data:
+        DPostFinal = DPost.split("=")
+        # fix blank date to yesterday
+        if DPostFinal[0]=="Date" and DPostFinal[1]=="":
+            DPostFinal[1] = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
+        #substitue the vars in the confirm page
+        read_data = read_data.replace("##"+DPostFinal[0]+"Marker##",DPostFinal[1])
+
+    return read_data
 
 myServer = HTTPServer((hostName, hostPort), MyServer)
 print(time.asctime(), "Server Starts - %s:%s" % (hostName, hostPort))
