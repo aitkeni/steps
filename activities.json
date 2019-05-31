@@ -321,6 +321,21 @@
             "stepsMultipler": 171.0
         },
         {
+            "activityType": "WalkingBrisk",
+            "activityTypeDisplayText": "Walking - Brisk",
+            "stepsMultipler": 242.0
+        },        
+        {
+            "activityType": "WalkingLeisure",
+            "activityTypeDisplayText": "Walking - Leisure",
+            "stepsMultipler": 100.0
+        },        
+        {
+            "activityType": "WalkingModerate",
+            "activityTypeDisplayText": "Walking - Moderate",
+            "stepsMultipler": 152.0
+        },
+        {
             "activityType": "WaterAerobics",
             "activityTypeDisplayText": "Water Aerobics",
             "stepsMultipler": 157.0

@@ -168,8 +168,7 @@ class MyServer(BaseHTTPRequestHandler):
 def processField(DPost1):
     # just take the value or if no value then a space
         DPostFinal = DPost1.split("=")
-        if DPostFinal[0]=="Date" and DPostFinal[1]=="":
-            DPostFinal[1] = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
+        DPostFinal = validateData(DPostFinal)
         return DPostFinal[1]
 
 def addActivities(read_data):
@@ -180,7 +179,7 @@ def addActivities(read_data):
     fh.close
     activities = data["activities"]
     for activity in activities:
-        html_parts.insert(len(html_parts)-1,"<option value=\"" + activity["activityType"] + "\">" + activity["activityTypeDisplayText"] + "</option>\n")
+        html_parts.insert(len(html_parts)-1,"<option value=\"" + activity["activityType"] + "\">" + activity["activityTypeDisplayText"] + " (" + str(activity["stepsMultipler"]) + ")" +  "</option>\n")
 
     return '\n'.join(html_parts)
 
@@ -188,13 +187,25 @@ def addData(read_data,DPost_Data):
     
     for DPost in DPost_Data:
         DPostFinal = DPost.split("=")
-        # fix blank date to yesterday
-        if DPostFinal[0]=="Date" and DPostFinal[1]=="":
-            DPostFinal[1] = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
+        DPostFinal = validateData(DPostFinal)
         #substitue the vars in the confirm page
         read_data = read_data.replace("##"+DPostFinal[0]+"Marker##",DPostFinal[1])
 
     return read_data
+
+def validateData(DPostFinal):
+    # fix blank date to yesterday
+    if DPostFinal[0]=="Date" and DPostFinal[1]=="":
+        DPostFinal[1] = (date.today() - timedelta(1)).strftime("%Y-%m-%d")
+    # the query params a space gets substitued with a + fix that
+    if DPostFinal[0]=="Name":
+        DPostFinal[1] = DPostFinal[1].replace("+"," ")
+    # only numerics on mins and steps
+    if DPostFinal[0]=="Minutes" and DPostFinal[1].isdigit()==False:
+        DPostFinal[1]="0"
+    if DPostFinal[0]=="Steps" and DPostFinal[1].isdigit()==False:
+        DPostFinal[1]="0"
+    return DPostFinal
 
 myServer = HTTPServer((hostName, hostPort), MyServer)
 print(time.asctime(), "Server Starts - %s:%s" % (hostName, hostPort))
