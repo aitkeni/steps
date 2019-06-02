@@ -184,14 +184,41 @@ def addActivities(read_data):
     return '\n'.join(html_parts)
 
 def addData(read_data,DPost_Data):
+
+    steps=0
+    mins=0
+    stepsMultiplier=0
+    totalsteps=0
     
     for DPost in DPost_Data:
         DPostFinal = DPost.split("=")
         DPostFinal = validateData(DPostFinal)
+        if DPostFinal[0]=="Steps":
+            steps=int(DPostFinal[1])
+        if DPostFinal[0]=="Activity":
+            stepsMultiplier = getStepsMultiplier(DPostFinal[1])
+        if DPostFinal[0]=="Minutes":
+            mins=int(DPostFinal[1])
         #substitue the vars in the confirm page
         read_data = read_data.replace("##"+DPostFinal[0]+"Marker##",DPostFinal[1])
 
+    # calculate the total steps
+    totalsteps=steps+stepsMultiplier*mins
+    read_data = read_data.replace("##TotalStepsMarker##",'{:.0f}'.format(totalsteps))
+
     return read_data
+
+def getStepsMultiplier(activityToFind):
+    fh = open('activities.json')
+    data = json.load(fh)
+    fh.close
+    activities = data["activities"]
+    for activity in activities:
+        if activity["activityType"]==activityToFind:
+            stepsMultipler = activity["stepsMultipler"]
+            return stepsMultipler
+
+    return 0
 
 def validateData(DPostFinal):
     # fix blank date to yesterday

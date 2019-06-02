@@ -106,6 +106,16 @@
             "stepsMultipler": 229.0
         },
         {
+            "activityType": "HorseRidingLeisure",
+            "activityTypeDisplayText": "Horse Riding - Leisurely",
+            "stepsMultipler": 31.0
+        },
+        {
+            "activityType": "HorseRidingTrotting",
+            "activityTypeDisplayText": "Horse Riding - Trotting",
+            "stepsMultipler": 102.0
+        },
+        {
             "activityType": "IceHockey",
             "activityTypeDisplayText": "Ice Hockey",
             "stepsMultipler": 229.0
