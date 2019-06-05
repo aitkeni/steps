@@ -1,22 +1,31 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="base.css" />
+</head>
 
 <body>
-
+<div class="pad2">
 <h2>York Step Counter</h2>
+</div>
 
 <form method="POST" action="confirm">
-    <table border="0.1" style="width:50%">
-        <tr><td>Name:</td><td><input type="string" name="Name"></td></tr>
-        <tr><td> Date: </td><td><input type="date" name="Date"> (Defaults to yesterday)</td></tr>
-        <tr><td>Activity:(steps multiplier) </td><td><select name="Activity">##ActivityMarker##</select></td></tr>
-        <tr><td>Minutes of Activity: </td><td><input type="string" name="Minutes"></td></tr>
-        <tr><td>Steps: </td><td><input type="string" name="Steps"></td></tr>
-    </table>
-
+    <div class="pad2">    
+        <div class="pad2">
+            <table border="0.1" style="width:50%" class="coverage-summary"> 
+                <tr><td class="file">Name:</td><td class="file"><input type="string" name="Name"></td></tr>
+                <tr><td> Date: </td><td><input type="date" name="Date"> (Defaults to yesterday)</td></tr>
+                <tr><td>Activity:(steps multiplier) </td><td><select name="Activity">##ActivityMarker##</select></td></tr>
+                <tr><td>Minutes of Activity: </td><td><input type="string" name="Minutes"></td></tr>
+                <tr><td>Steps: </td><td><input type="string" name="Steps"></td></tr>
+            </table>
+        </div>
+    </div>
+<div class="pad2">
 <input type="submit" value="Add Steps">
+</div>
 </form>
+
 
 
 </body>

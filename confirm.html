@@ -1,24 +1,39 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="base.css" />
+</head>
 
 <body>
-
-<h2>York Step Counter</h2>
-
-<form method="POST" action="AddSteps">
-    <table border="0.1" style="width:50%">
-        <tr><td>Name:</td><td><input type="string" name="Name" value="##NameMarker##"></td></tr>
-        <tr><td>Activity: </td><td><input type="string" name="Activity" value="##ActivityMarker##"></td></tr>
-        <tr><td>Date: </td><td><input type="date" name="Date" value="##DateMarker##"></td></tr>
-        <tr><td>Minutes: </td><td><input type="string" name="Minutes" value="##MinutesMarker##"></td></tr>
-        <tr><td>Steps: </td><td><input type="string" name="Steps" value="##StepsMarker##"></td></tr>
-        <tr><td>Total Steps: </td><td><input type="string" name="Steps" value="##TotalStepsMarker##"></td></tr>
-    </table>
-
-    <input type="submit" value="Confirm">   <a href="/"> Cancel</a>  
-</form>
-
+    <div class="pad2">
+        <h2>York Step Counter</h2>
+    </div>
+    <form method="POST" action="AddSteps">
+        <div class="pad2">
+            <table border="0.1" style="width:50%" class="coverage-summary">
+                <tr><td>Name:</td><td><input type="string" name="Name" value="##NameMarker##"></td></tr>
+                <tr><td>Activity: </td><td><input type="string" name="Activity" value="##ActivityMarker##"></td></tr>
+                <tr><td>Date: </td><td><input type="date" name="Date" value="##DateMarker##"></td></tr>
+                <tr><td>Minutes: </td><td><input type="string" name="Minutes" value="##MinutesMarker##"></td></tr>
+                <tr><td>Steps: </td><td><input type="string" name="Steps" value="##StepsMarker##"></td></tr>
+                <tr><td>Total Steps: </td><td><input type="string" name="Steps" value="##TotalStepsMarker##"></td></tr>
+            </table>
+        </div>
+        <div class=".wrapper">
+            <div class="pad2">
+                <div class=".side-by-side">
+                    <div>
+                        <table border="0.1" style="width:10%" >
+                            <tr><td><input type="submit" value="Confirm"></td>
+                            <td><a href="/" class="button"> Cancel</a></td></tr>
+                        </table>
+                        <div class="pad2"></div>
+                        <div class="pad2"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 
 

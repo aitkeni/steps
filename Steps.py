@@ -19,7 +19,20 @@ class MyServer(BaseHTTPRequestHandler):
         if self.path == "/":
             Temp = "./logon.html"
         elif self.path == "/home.html":
-            Temp = "." + self.path        
+            Temp = "." + self.path    
+        elif self.path == "/base.css":
+            Temp = "." + self.path    
+            exists = os.path.exists(Temp)
+            if exists:
+                handle = open(Temp, "r")
+                read_data = handle.read()
+                self.send_response(200)
+                self.send_header("Content-type", "text/css")
+                self.end_headers()     
+                self.wfile.write(bytes(read_data.encode("utf-8")))
+                handle.close
+            return
+                        
         else: 
             return
         

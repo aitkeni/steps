@@ -116,6 +116,16 @@
             "stepsMultipler": 102.0
         },
         {
+            "activityType": "HorseRidingCantering",
+            "activityTypeDisplayText": "Horse Riding - Cantering",
+            "stepsMultipler": 125.0
+        },
+        {
+            "activityType": "HorseRidingGallop",
+            "activityTypeDisplayText": "Horse Riding - Gallop",
+            "stepsMultipler": 140.0
+        },
+        {
             "activityType": "IceHockey",
             "activityTypeDisplayText": "Ice Hockey",
             "stepsMultipler": 229.0
@@ -209,6 +219,21 @@
             "activityType": "RugbyUnion",
             "activityTypeDisplayText": "Rugby Union",
             "stepsMultipler": 180.0
+        },
+        {
+            "activityType": "RunCompetitive",
+            "activityTypeDisplayText": "Run - competitive (7mph)",
+            "stepsMultipler": 348.0
+        },
+        {
+            "activityType": "RunLeisure",
+            "activityTypeDisplayText": "Run - leisure (5mph)",
+            "stepsMultipler": 242.0
+        },
+        {
+            "activityType": "RunModerate",
+            "activityTypeDisplayText": "Run - moderate (6mph)",
+            "stepsMultipler": 303.0
         },
         {
             "activityType": "Sailing",
@@ -332,17 +357,17 @@
         },
         {
             "activityType": "WalkingBrisk",
-            "activityTypeDisplayText": "Walking - Brisk",
+            "activityTypeDisplayText": "Walking - Brisk (5mph)",
             "stepsMultipler": 242.0
         },        
         {
             "activityType": "WalkingLeisure",
-            "activityTypeDisplayText": "Walking - Leisure",
+            "activityTypeDisplayText": "Walking - Leisure (3mph)",
             "stepsMultipler": 100.0
         },        
         {
             "activityType": "WalkingModerate",
-            "activityTypeDisplayText": "Walking - Moderate",
+            "activityTypeDisplayText": "Walking - Moderate (4mph)",
             "stepsMultipler": 152.0
         },
         {
