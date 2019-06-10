@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="base.css" />
+</head>
+
+<body>
+<div class="pad2">
+<h2>York Step Counter</h2>
+</div>
+<div id="hot"></div>
+<div class="pad2">
+<a href="/"> Add Another Activity</a><br>
+</div>
+
+<script>
+var dataObject2 = ##DataMarker##;
+
+var hotElement = document.querySelector('#hot');
+var hotElementContainer = hotElement.parentNode;
+var hotSettings = {
+  data: dataObject2,
+  columns: [
+    {
+      data: 'Name',
+      type: 'text'
+    },
+    {
+      data: 'Activity',
+      type: 'text'
+    },
+    {
+      data: 'Date',
+      type: 'text'
+    },
+    {
+      data: 'Minutes',
+      type: 'text'
+    },
+    {
+      data: 'Steps',
+      type: 'text'
+    },
+    {
+      data: 'TotalSteps',
+      type: 'text'
+    }
+  ],
+  stretchH: 'all',
+  width: 880,
+  autoWrapRow: true,
+  height: 487,
+  maxRows: 22,
+  filters: true,
+  dropdownMenu: true,
+  rowHeaders: true,
+  colHeaders: [
+  'Name','Activity','Date','Minutes','Steps','Total Steps'
+  ]
+};
+var hot = new Handsontable(hotElement, hotSettings);
+
+</script>
+
+
+</body>
+
+
+</html>
+
+
+

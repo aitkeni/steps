@@ -5,6 +5,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import os
 import json
+import csv        
 from datetime import date,timedelta
 
 hostName = "159.122.217.62"
@@ -17,41 +18,39 @@ class MyServer(BaseHTTPRequestHandler):
    
     def do_GET(self):
         if self.path == "/":
-            Temp = "./logon.html"
-        elif self.path == "/home.html":
-            Temp = "." + self.path    
+            temp = "./logon.html"
+            self.sendFile(temp,"text/html")
+        # elif self.path == "/home.html":
+        #     temp = "." + self.path  
+        #     self.sendFile(temp,"text/html")  
+        # elif self.path == "/view.html":
+        #     temp = "." + self.path  
+        #     self.sendFile(temp,"text/html")  
         elif self.path == "/base.css":
-            Temp = "." + self.path    
-            exists = os.path.exists(Temp)
-            if exists:
-                handle = open(Temp, "r")
-                read_data = handle.read()
-                self.send_response(200)
-                self.send_header("Content-type", "text/css")
-                self.end_headers()     
-                self.wfile.write(bytes(read_data.encode("utf-8")))
-                handle.close
-            return
-                        
+            temp = "." + self.path   
+            self.sendFile(temp,"text/css")                
         else: 
             return
-        
-        exists = os.path.exists(Temp)
+   
+        return 
+
+    def sendFile(self, temp, type):
+        exists = os.path.exists(temp)
         if exists:
-            handle = open(Temp, "r")
+            handle = open(temp, "r")
             read_data = handle.read()
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", type)
             self.end_headers()     
             self.wfile.write(bytes(read_data.encode("utf-8")))
             handle.close
-            
+
         else:
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
             self.wfile.write(bytes("This file no longer exists or has been moved/edited".encode("utf-8")))
-                    
+
         return
 
 	
@@ -68,10 +67,10 @@ class MyServer(BaseHTTPRequestHandler):
             DPost_Data = DPost_Data.split("&")
 
             if DPost_Data[0]=="Password=":
-                Temp = "./home.html"          
-                exists = os.path.exists(Temp)
+                temp = "./home.html"          
+                exists = os.path.exists(temp)
                 if exists:
-                    handle = open(Temp, "r")
+                    handle = open(temp, "r")
                     read_data = handle.read()
                     read_data = addActivities(read_data)
                     self.send_response(200)
@@ -92,14 +91,34 @@ class MyServer(BaseHTTPRequestHandler):
             DPost_Data = (str(post_data.decode("utf-8")))
             DPost_Data = DPost_Data.split("&")
  
-
-            Temp = "./confirm.html"          
-            exists = os.path.exists(Temp)
+            temp = "./confirm.html"          
+            exists = os.path.exists(temp)
             if exists:
-                handle = open(Temp, "r")
+                handle = open(temp, "r")
                 read_data = handle.read()
 
                 read_data = addData(read_data, DPost_Data)
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()     
+                self.wfile.write(bytes(read_data.encode("utf-8")))
+                handle.close
+
+        if self.path=="/view":
+            content_length = int(self.headers['Content-Length'])            
+            post_data = self.rfile.read(content_length)          
+            
+            DPost_Data = (str(post_data.decode("utf-8")))
+            DPost_Data = DPost_Data.split("&")
+ 
+
+            temp = "./view.html"          
+            exists = os.path.exists(temp)
+            if exists:
+                handle = open(temp, "r")
+                read_data = handle.read()
+
+                read_data = addSavedData(read_data, DPost_Data)
                 self.send_response(200)
                 self.send_header("Content-type", "text/html")
                 self.end_headers()     
@@ -163,10 +182,10 @@ class MyServer(BaseHTTPRequestHandler):
                 f.writelines(DPostFinal)
                 f.close
             
-            Temp = "./success.html"          
-            exists = os.path.exists(Temp)
+            temp = "./success.html"          
+            exists = os.path.exists(temp)
             if exists:
-                handle = open(Temp, "r")
+                handle = open(temp, "r")
                 read_data = handle.read()
 
                 self.send_response(200)
@@ -195,6 +214,17 @@ def addActivities(read_data):
         html_parts.insert(len(html_parts)-1,"<option value=\"" + activity["activityType"] + "\">" + activity["activityTypeDisplayText"] + " (" + str(activity["stepsMultipler"]) + ")" +  "</option>\n")
 
     return '\n'.join(html_parts)
+
+def addSavedData(read_data,DPost_Data):
+
+        stepsData = "./StepsData.csv"   
+        csvfile = open(stepsData, 'r')
+
+        fieldnames = ('Name','Activity','Date','Minutes','Steps','TotalSteps')
+        reader = csv.DictReader( csvfile)
+        out = json.dumps( [ row for row in reader ] )
+        read_data = read_data.replace("##DataMarker##",(str(out)))
+        return read_data
 
 def addData(read_data,DPost_Data):
 
